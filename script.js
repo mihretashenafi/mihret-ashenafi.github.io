@@ -4,23 +4,33 @@ const speed = 150;
 
 function type() {
   const target = document.getElementById("typed-text");
-  if (!isDeleting && j < words[i].length) {
-    currentWord += words[i][j];
+  const word = words[i];
+
+  if (!isDeleting && j < word.length) {
+    // Typing
+    currentWord += word[j];
     j++;
     target.textContent = currentWord;
     setTimeout(type, speed);
-  } else if (isDeleting && j >= 0) {
-    currentWord = words[i].substring(0, j);
+  } else if (isDeleting && j > 0) {
+    // Deleting
     j--;
+    currentWord = word.substring(0, j);
     target.textContent = currentWord;
     setTimeout(type, speed / 2);
   } else {
+    // Switch typing/deleting
     isDeleting = !isDeleting;
-    if (!isDeleting) i = (i + 1) % words.length;
+    if (!isDeleting) {
+      // Move to next word only after deleting
+      i = (i + 1) % words.length;
+    }
     setTimeout(type, 1000);
   }
 }
+
 type();
+
 
 
 // ================== Dark Mode Toggle ==================
