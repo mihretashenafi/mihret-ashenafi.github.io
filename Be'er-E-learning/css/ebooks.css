@@ -1,0 +1,113 @@
+body{
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 15px;
+	line-height: 1.0;
+	color: #fff4ec;
+	padding: 0;
+	margin: 0;
+	background-color: #18181d;
+}
+
+p   { 
+    text-align: center;
+    }
+ .showEbooks{
+text-align: center;
+
+ }   
+.headerContainer{
+	width:95%;
+	margin:auto;
+	overflow: hidden;
+}
+
+.menuBar{
+	width: 100%;
+	margin: auto;
+	overflow: hidden;
+	background-color: #272729;
+	color: #fff4ec;
+	min-height: 50px;	
+}
+.subBar{
+    width: 100%;
+    margin: 15px;
+    border-top-color: #e96011;
+	overflow: hidden;
+	background-color: #272729;
+	color: #fff4ec;
+	min-height: 50px;
+}
+
+.menuBar a{
+	color: #fff4ec;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+.subBar a{
+    color: #fff4ec;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+.menuBar ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: block;
+	
+}
+.subBar u1{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: block;
+	
+}
+.menuBar li{
+	float: left;
+	display: inline;
+	padding: 0 20px 0 20px;
+}
+.subBar li{
+	float: left;
+	display: inline;
+	padding: 0 20px 0 20px;
+}
+.menuBar nav{
+    float: left;
+	margin-top: 17px;
+	width: fit-content;
+	
+}
+.subBar nav{
+    float: left;
+    border-right-color: #e96011;
+	margin-top: 17px;
+	width: fit-content;
+	
+}
+
+.menuBar a:hover{
+	color: #e96011;
+	font-weight: bold;
+}
+.subBar a:hover{
+    color: #e96011;
+    font-weight: bold;
+}
+
+/* unvisited link */
+.showEbooks a:link {
+    color: rgb(103, 82, 223);
+}
+
+/* mouse over link */
+.showEbooks  a:hover {
+    color: #e96011;
+    text-decoration-line: underline;
+}
+
+/* selected link */
+.showEbooks a:active {
+    color: rgb(210, 210, 224);
+}

@@ -1,0 +1,13 @@
+<section id="logoAnim">
+		<div class="bodyContainer">
+			<h1>(LOGO)</h1>
+		</div>
+		<div class="tibebLine">
+			LineImage
+		</div>
+	</section>
+
+	<section id="promptSignup">
+		<h6>Text about a brief description of the site and lead the user to signup.</h6>
+		<button type="button" class="signupButton">Signup</button>
+	</section>

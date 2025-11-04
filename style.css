@@ -1,0 +1,586 @@
+/* Reset and base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    scroll-behavior: smooth;
+    font-family: 'Cambria';
+    background-color: var(--border);
+    color: var(--text);
+    transition: background-color 0.3s, color 0.3s;
+    transition: background 0.5s, color 0.5s;
+    width: 100%;
+    overflow-x: visible; /* prevent horizontal scroll */
+}
+
+/* Theme variables */
+:root {
+    --bg: #f5f7fa;
+    --text: #222;
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --secondary: #555;
+    --Tertiary: #d4caca;
+    --border: #ddd;
+    --btn-bg: var(--primary);
+    --btn-color: white;
+    --btn-outline-bg: transparent;
+    --btn-outline-color: var(--primary);
+    --btn-outline-border: var(--primary);
+}
+
+body.dark {
+    --bg: #4c4949;
+    --text: #e0e0e0;
+    --primary: #3b82f6;
+    --primary-hover: #2563eb;
+    --secondary: #bbb;
+    --Tertiary: rgb(45, 40, 40);
+    --border: #333;
+    --btn-bg: var(--primary);
+    --btn-color: white;
+    --btn-outline-bg: transparent;
+    --btn-outline-color: var(--primary);
+    --btn-outline-border: var(--primary);
+}
+
+/* Navigation */
+nav {
+    background-color: var(--Tertiary);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 1.5rem; /* Reduced padding to fit full width better */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+    color: var(--primary);
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: var(--btn-color);
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  
+  #theme-toggle:hover,
+  #theme-toggle:focus {
+    color: var(--primary-hover);
+  }
+  body.dark #theme-toggle {
+    color: white;  /* white text in dark mode */
+    font-weight: bold;
+}
+  body.light #theme-toggle {
+    color: black;  /* black text in lightk mode */
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    background: url('images/background.jpg') center/cover no-repeat;
+    position: relative;
+    color: white; /*keep text white here*/
+    width: 100%;
+    box-sizing: border-box;
+    
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+    transition: background-color 0.3s ease;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin: 0 auto;
+    
+}
+
+.hero-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 4px solid var(--primary);
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+.hero-content p span#typed-text {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.btn {
+    background-color: var(--btn-bg);
+    color: var(--btn-color);
+    padding: 0.8rem 1.6rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    
+    display: inline-block;
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: var(--primary-hover);
+}
+
+.btn.outline {
+    background-color: var(--btn-outline-bg);
+    color: var(--btn-outline-color);
+    border: 2px solid var(--btn-outline-border);
+}
+
+.btn.outline:hover,
+.btn.outline:focus {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* Sections */
+.section {
+    background-color: var(--border);
+    color: var(--text);
+    padding: 4rem 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.section > * {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+    text-align: center;
+}
+
+/* About */
+#about p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--secondary);
+    text-align: center;
+}
+
+/* Skills */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+.skills-grid div {
+    text-align: center;
+    color: var(--text);
+}
+
+.skills-grid img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+    filter: var(--img-filter);
+}
+
+body.dark .skills-grid img {
+    filter: brightness(0) invert(1);
+}
+
+body.dark .hero-section::after {
+    background-color: var(--border);
+}
+body.light .hero-section::after {
+    background-color: var(--border);
+}
+
+.skills-grid p {
+    font-weight: 600;
+}
+
+/* Experience */
+.job {
+    margin-bottom: 1.5rem;
+}
+
+.job h3 {
+    color: var(--primary);
+    margin-bottom: 0.3rem;
+}
+
+.job p {
+    color: var(--secondary);
+    font-size: 1rem;
+}
+
+/* Projects */
+.project-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    background-color: var(--border);
+    padding: 1rem;
+    border-radius: 8px;
+    
+}
+
+.project-card img {
+    width: 200px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.project-card div {
+    flex: 1;
+}
+
+.project-card h3 {
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+.social-container {
+  display: flex;
+  justify-content: space-between; /* equal spacing */
+  align-items: center;
+  width: 100%; /* or a fixed width like 300px */
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.social-container img {
+  width: 24px;
+  height: 24px;
+}
+
+.bubble {
+  position: fixed;
+  top: 60px;
+  right: 30px;
+  background-color: var(--primary);
+  color: rgb(255, 255, 255);
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-size: 15px;
+  z-index: 500;
+  opacity: 0;
+  
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(20px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(20px); }
+}
+
+
+/* Enable horizontal scrolling for the container */
+
+.portfolio-container {
+    padding: 10px 30px; /* increase side padding slightly */
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden; /* Prevent vertical scroll from accidental drags */
+    scroll-snap-type: mandatory;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS and WebKit */
+    gap: 26px;
+    padding: 10px 0;
+    scrollbar-width: none; /* Firefox */
+    flex-wrap: nowrap;
+
+}
+
+/* Chrome, Safari, Edge - hide scrollbar */
+.portfolio-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+/* Wrapper around container and arrows */
+.portfolio-wrapper {
+    position: relative;
+}
+
+.portfolio-card.cloned {
+    /* Optional: reduce opacity or mark for debugging */
+    opacity: 0.9;
+}
+/* Make each card fixed width and snap */
+.portfolio-card {
+  flex: 0 0 250px; /* Fixed width for swipe */
+  scroll-snap-align: start;
+  background-color: var(--border);
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  text-decoration: none;
+  color: var(--secondary);
+  padding: 70px;
+}
+
+/* Disable image dragging and selection */
+.portfolio-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  touch-action: manipulation;
+  pointer-events: auto;
+}
+
+
+
+/* Arrows */
+.scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 2;
+  padding: 8px 12px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: background 0.2s ease;
+}
+
+.scroll-arrow:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+/* Left arrow */
+.scroll-arrow.left {
+  left: -10px;
+  background-color: transparent;
+  color: var(--secondary);
+}
+
+/* Right arrow */
+.scroll-arrow.right {
+  right: -10px;
+  background-color: transparent;
+  color: var(--secondary);
+}
+#experience ul {
+  padding-left: 20px;
+  margin-top: 8px;
+}
+
+#experience li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+/* Make sure container has some padding so arrows don’t overlap cards */
+
+
+
+
+/* Contact */
+.contact-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+}
+
+.contact-form {
+    flex: 1 1 320px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form label {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: var(--bg);
+    color: var(--text);
+    resize: vertical;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.map-container {
+    flex: 1 1 320px;
+    max-width: 400px;
+    border-radius: 8px;
+    overflow: visible;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--border); /* Or a solid color to overlay correctly */
+    text-align: center;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.9rem;
+    color: var(--secondary);
+    box-sizing: border-box;
+    z-index: 999;
+  }
+  
+/* Fade-in animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav {
+        flex-wrap: wrap;
+        padding: 1rem;
+    }
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        margin-top: 0.5rem;
+    }
+    .contact-wrapper {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 1rem;
+    }
+    .project-card {
+        flex-direction: column;
+    }
+    .section > * {
+        padding: 0 1rem;
+    }
+}
+
+.portfolio-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+.portfolio-card:hover {
+  transform: scale(1.05);
+}
+.portfolio-card::after {
+  content: attr(data-desc);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.portfolio-card:hover::after { opacity: 1; }

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login | Inventory Management</title>
+  <link rel="stylesheet" href="StockStyle.css" />
+</head>
+<body>
+
+
+
+ <!-- Login Modal -->
+<div id="loginModal" class="modal">
+  <div class="modal-content" style="max-width: 360px;">
+    <h2 style="color:#3514d4; margin-bottom: 15px; text-align:center;">Login</h2>
+    
+    <input id="loginUsername" type="text" placeholder="👤Username" style="font-family: Cambria;">
+    <input id="loginPassword" type="password" placeholder="🔒Password" style="font-family: Cambria;"/>
+    
+    <div id="loginError" style="color: red; margin-top: 10px; display:none; text-align:center; font-weight: 600; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"></div>
+    
+    <div style="margin-top: 20px; text-align: center;">
+      <button class="btn" onclick="submitLogin()">Login</button>
+      <button class="btn" onclick="closeLoginModal()">Cancel</button>
+      <div>
+      <button class="btn btn--modal" onclick="backToPortfolio()">Back to Portfolios</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Message Modal -->
+<div id="messageModal" class="modal" style="display: none; align-items: center; justify-content: center;">
+  <div class="modal-content" style="max-width: 300px; text-align: center;">
+    <p id="messageText" style="font-family: Cambria; font-weight: bold;"></p>
+    <!-- <button style="margin-top: 15px; font-family: Cambria;" onclick="closeMessageModal()">OK</button> -->
+  </div>
+</div>
+
+
+
+  <script>
+    function openLoginModal() {
+  document.getElementById('loginModal').style.display = 'flex';
+  document.getElementById('loginError').style.display = 'none';
+  document.getElementById('loginUsername').value = '';
+  document.getElementById('loginPassword').value = '';
+}
+
+    
+
+function closeLoginModal() {
+  document.getElementById('loginModal').style.display = 'none';
+}
+
+function submitLogin() {
+  const user = document.getElementById('loginUsername').value.trim();
+  const pass = document.getElementById('loginPassword').value.trim();
+  const errorEl = document.getElementById('loginError');
+
+  if (!user && !pass) {
+    errorEl.textContent = '⚠️ Please insert Username & Password';
+    errorEl.style.display = 'block';
+    return;
+  }
+
+  if (!user) {
+    errorEl.textContent = '⚠️ Please insert Username';
+    errorEl.style.display = 'block';
+    return;
+  }
+
+  if (!pass) {
+    errorEl.textContent = '⚠️ Please insert Password';
+    errorEl.style.display = 'block';
+    return;
+  }
+
+
+  if (user === 'admin' && pass === 'p') {
+  errorEl.style.display = 'none';
+  
+
+  // Show "Logging in..." message
+  showMessageAuto('🔄 Logging in...');
+
+  // After 2 seconds, show "Login successful!"
+  setTimeout(() => {
+    showMessageAuto('✅ Login successful!');
+
+    // After another 2 seconds, close message and redirect
+    setTimeout(() => {
+      closeMessageModal();
+      closeLoginModal();
+      window.location.href = 'StockIndex.html';
+    }, 1000);
+  }, 1000);
+} else {
+  errorEl.textContent = '❌ Invalid username or password';
+  errorEl.style.display = 'block';
+}
+
+}
+
+
+function showMessageAuto(msg) {
+  const modal = document.getElementById('messageModal');
+  const messageText = document.getElementById('messageText');
+
+  messageText.textContent = msg;
+  modal.style.display = 'flex';
+}
+
+// Back to Portfolio Function
+function backToPortfolio() {
+  // Show "..." message
+  showMessageAuto('...🏠');
+
+  // After 2 seconds, redirect to login page
+  setTimeout(() => {
+    window.location.href = '../Index.html';
+  }, 1000);
+}
+
+function showMessage(msg, callback) {
+  const modal = document.getElementById('messageModal');
+  const messageText = document.getElementById('messageText');
+
+  messageText.textContent = msg;
+  modal.style.display = 'flex';
+
+  // Clear previous event listeners
+  const btn = modal.querySelector('button');
+  btn.onclick = () => {
+    modal.style.display = 'none';
+    if (callback) callback();
+  };
+}
+
+function closeMessageModal() {
+  document.getElementById('messageModal').style.display = 'none';
+}
+window.onload = openLoginModal;
+
+  </script>
+</body>
+</html>
+
+

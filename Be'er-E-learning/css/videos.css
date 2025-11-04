@@ -1,0 +1,24 @@
+.container{	
+ /*background-color: #ccccec;*/
+    padding-top: 5px;
+    margin-top: 0;
+	height:auto;
+   
+
+}
+.innerbody{
+	width:100%;
+	height:100%;
+	display:block;
+	margin:5px;
+}
+.beingWatched{
+    width: 350px;
+    height: 250px;
+    display: block;
+    margin-left: 400px;
+    margin-top: 50px;
+    overflow: hidden;
+    padding-left: 20px;
+    background-color: brown;
+}

@@ -1,0 +1,125 @@
+
+/* The container <div> - needed to position the dropdown content */
+header #rightContainer{
+	float: right;
+    margin-top: -2px;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+img {
+	
+	width: 25px;
+    height: 28px;
+    position: absolute;
+    padding: 0;
+    background-color: #ffb10ae6;
+    border: round;
+    -webkit-border-radius: 7px;
+}
+#menu{
+    display: inline-block;
+    margin-right: 60px;
+}
+.UserIcon{
+	margin-right:60px;
+}
+.dropdown:hover .navi #menu a{
+    display: inline-block;
+	
+}
+.navi #menu> ul{
+	height:30px;
+}
+/* Links inside the dropdown */
+.navi #menu a{
+	color:white;
+    padding: 12px 16px;
+    text-decoration: none;
+	display: block;
+}
+
+
+/* Dropdown Content (Hidden by Default) */
+.navi #menu .sub1 {
+    display: none;
+    position: absolute;
+    background-color: #4b4646;
+	min-width: 160px;
+	border-top-color: #e96011;
+	border-bottom-color: #e96011;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* Change font of dropdown links on hover */
+.navi #menu a:hover 
+{
+font-weight:bolder;
+}
+
+/* Show the dropdown menu on hover */
+
+
+
+.navi #menu ul{
+  display: inline-block;
+    height: 25px;
+    width: 70px;
+
+}
+
+.navi #menu li{
+     display: inline-block;
+    -webkit-border-radius: 5px;
+    list-style: none;
+    padding-right: 30px;
+    height: 30px;
+    /* margin-right: 7px; */
+    font: 12px arial verdana;
+    position: relative;
+    color: #e96011;
+    font-weight: bold;
+        
+}
+
+
+
+
+      /*rules for navigation Sub-menu*/
+     /* =============================*/
+  
+.navi #menu .sub1 {
+	/*display: inline-block;*/
+   position: relative;
+    margin: 0px;
+    /* padding-right: 28px; */
+    padding-left: 1px;
+    top: -14px;
+    right: -30px;
+    width: 100px;
+    clear: both;
+	
+}
+
+
+.sub1 a{
+    line-height:10px;
+    width:140px;
+    color:white;
+	
+}
+.navi #menu  li:hover ul
+{
+    display:block;
+    background-color:crimson;
+    border-radius:none;
+	transition:.15s;
+}
+ 
+#menu .Rarrow{
+	font-size: 20px;
+    position: relative;
+    right: 36px;
+    top: -5px;
+}

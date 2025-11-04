@@ -1,0 +1,18 @@
+.Close  {
+	margin-left: 85px;
+    margin-top: -10px;
+    color: #034b54;
+    display: block;
+   /* background-image: url(..C:\Kelem\svgs\regular\times-circle.svg);*/
+    width: 30px;
+    height: 30px;
+    background-color: crimson;
+    -webkit-border-radius: 25px;
+    border-radius: 15px;
+    border: 1px solid dashed;
+    text-decoration: none;
+	}
+	
+.close{
+	top:-15px;
+}	

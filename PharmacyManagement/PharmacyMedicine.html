@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Manage Medicines</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="PharmacyStyle.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body data-page="medicine">
+  <div class="dashboard">
+    <header>
+      <h1><i class="fas fa-pills"></i> Medicine Management</h1>
+      <button onclick="window.location='PharmacyDashboard.html'"><i class="fas fa-arrow-left"></i> Back</button>
+    </header>
+    <main>
+      <form id="medicineForm">
+        <input type="hidden" id="editIndex">
+        <input type="text" id="medName" placeholder="Name" required/>
+        <input type="number" id="medQty" placeholder="Quantity" min="1" required/>
+        <input type="number" id="medPrice" placeholder="Price" step="0.01" min="0.01" required/>
+        <button type="submit">Save Medicine</button>
+      </form>
+
+      <div class="export-buttons">
+        <div class="export-dropdown">
+          <button id="exportDropdownBtn"><i class="fas fa-download"></i> Export ▼</button>
+          <div class="export-options">
+            <div data-type="csv"><i class="fas fa-file-csv"></i> CSV</div>
+            <div data-type="json"><i class="fas fa-file-code"></i> JSON</div>
+            <div data-type="xml"><i class="fas fa-file-alt"></i> XML</div>
+            <div data-type="pdf"><i class="fas fa-file-pdf"></i> PDF</div>
+          </div>
+        </div>
+      </div>
+
+      <table id="medicineTable">
+        <thead>
+          <tr><th>Name</th><th>Qty</th><th>Price</th><th>Actions</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </main>
+  </div>
+  <script src="PharmacyScript.js"></script>
+  <!-- jsPDF and AutoTable plugin -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+
+</body>
+</html>

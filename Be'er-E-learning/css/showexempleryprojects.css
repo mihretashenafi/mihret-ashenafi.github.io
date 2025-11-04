@@ -1,0 +1,45 @@
+#header{
+	  background-color:#35424a;
+	  color:white;
+      padding: 0px;
+      text-align: center;
+      height:90px;
+      
+    }
+    #header h1{
+      float:left;
+    }
+ #section {
+  margin-top:0;
+  font-size:20px;
+  background-color: #f0ffff;
+  float:left;
+  width :100%;
+  padding:10px;
+  height: 425px;
+  border-bottom:#e8491d 3px solid;
+}
+#footer {
+	background-color: #35424a;
+	color:white;
+	clear:both;
+    width: 1350px;
+    height:70px;
+    
+  }
+  .cmdSubmit{
+    height:38px;
+    background:#e8491d;
+    border:0;
+    padding-left:20px;
+    padding-right: 20px;
+    color:#ffffff;
+}
+    .top-right {
+    position: absolute;
+    top:30px;
+    right: 36px;
+}
+  a:hover {
+	background-color: #ffffff;}
+ 

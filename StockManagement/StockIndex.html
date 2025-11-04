@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inventory Management</title>
+  <link rel="stylesheet" href="StockStyle.css" />
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+
+    <!-- Standard button 
+        <button class="btn">Standard Button</button> 
+
+        Smaller button, e.g. for tables
+        <button class="btn btn--small">Small Button</button>
+
+        Modal buttons with extra margin
+        <button class="btn btn--modal">Modal Button</button>
+
+        Control buttons inside controls container
+        <button class="btn btn--control">Control Button</button>
+
+
+        Example for inventory table buttons 
+          <button class="btn btn--small">Edit</button>
+          
+
+          <button class="btn btn--modal">Yes</button>
+          
+           -->
+
+
+
+  <div class="container">
+    <h1>Current Inventory</h1>
+    <div style="flex-basis: 100%; display: flex; justify-content: flex-end;">
+    <button  onclick="logout()" class="btn btn--logout" >🔒<br/>Log Out</button>
+  </div>
+    <div class="controls">
+      <input type="text" id="searchInput" placeholder="🔍 Search items..." />
+      <select id="categoryFilter">
+      <option value=""> All Categories</option>
+      </select>
+      <button class="btn btn--control" onclick="openAddModal()">Add Item</button>
+      <div class="export-dropdown">
+    <button class="btn btn--control" id="exportBtn">Export 📤</button>
+    <div id="exportOptions" class="export-options" style="display:none;">
+      <div onclick="exportCSV()">Export as CSV</div>
+      <div onclick="exportPDF()">Export PDF</div>
+    </div>
+    
+    <button class="btn btn--control" onclick="clearInventory()">Clear All</button>
+    </div>
+
+
+<!-- Delete Confirmation Modal -->
+<div id="deleteConfirmModal" class="modal" style="display:none;">
+  <div class="modal-content">
+    <p id="deleteConfirmMessage"></p>
+    <div style="text-align: right; margin-top: 15px;">
+      <button id="deleteConfirmYes">Yes</button>
+      <button id="deleteConfirmNo">No</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- Add Item Modal -->
+<div id="addItemModal" class="modal" style="display:none;">
+  <div class="modal-content">
+    <h2>Add Item</h2>
+    <input id="addItemName" type="text" placeholder="Name" />
+    <input id="addItemQty" type="number" min="0" placeholder="Quantity" />
+    <input id="addItemCategory" type="text" placeholder="Category" />
+    <div id="addSaveMessage" style="color: red; margin-top: 10px; font-weight: bold;"></div>
+    <div style="text-align: right; margin-top: 15px;">
+      <button id="addSaveBtn">Save</button>
+      <button id="addCancelBtn">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- Edit Item Modal -->
+<div id="editItemModal" class="modal" style="display:none;">
+  <div class="modal-content">
+    <h2>Edit Item</h2>
+    <input id="editItemName" type="text" placeholder="Name" />
+    <input id="editItemQty" type="number" min="0" placeholder="Quantity" />
+    <input id="editItemCategory" type="text" placeholder="Category" />
+    <div id="editSaveMessage" style="color: red; margin-top: 10px; font-weight: bold;"></div>
+    <div style="text-align: right; margin-top: 15px;">
+      <button id="editSaveBtn">Save</button>
+      <button id="editCancelBtn">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- Clear All Confirmation Modal -->
+<div id="clearAllModal" class="modal" style="display:none;">
+  <div class="modal-content">
+    <p>Are you sure you want to clear all inventory?</p>
+    <div style="text-align: right; margin-top: 15px;">
+      <button id="clearAllYes">Yes</button>
+      <button id="clearAllNo">No</button>
+    </div>
+  </div>
+</div>
+
+
+    <table class="inventory-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Qty</th>
+          <th>Category</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="inventoryBody"></tbody>
+    </table>
+    
+
+<!-- History Log Bottum Page  -->
+    
+<div class="history-log-container">
+  <div class="history-log-title">🕓 Stock History 
+    
+</div>
+  
+  <ul id="historyLog" class="history-log"></ul>
+</div>
+
+  </div>
+ <!-- Message Modal -->
+<div id="messageModal" class="modal" style="display: none; align-items: center; justify-content: center;">
+  <div class="modal-content" style="max-width: 300px; text-align: center;">
+    <p id="messageText" style="font-family: Cambria; font-weight: bold;"></p>
+    <!-- <button style="margin-top: 15px; font-family: Cambria;" onclick="closeMessageModal()">OK</button> -->
+  </div>
+</div>
+
+    
+
+  <script src="StockScript.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+<script src="StockScript.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,344 @@
+body {
+  background-image:url('images/inventory.webp');
+  font-family: cambria, serif;
+  /* background: #e4e4e4; */
+  color: #111;
+  margin: 0;
+  padding: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: Roboto, serif;
+}
+
+/* Base button style */
+.btn {
+  font-family: Cambria, serif; /* consistent font for all buttons */
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(to right, #3f5ee7, #0d2881);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Hover state for base button */
+.btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(to right, #1441d4, #285cb0);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Active (pressed) state for base button */
+.btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Modifier: smaller buttons for table */
+.btn--small {
+  padding: 6px 14px;
+  font-size: 14px;
+  margin-right: 6px;
+}
+
+/* Modifier: modal buttons with extra margin */
+.btn--modal {
+  margin: 10px 15px;
+}
+
+/* Modifier: buttons used in controls */
+.btn--control {
+  /* reuse base styles, no override needed unless customization required */
+      margin: 5px 1px;
+      
+}
+.btn--red {
+  background: linear-gradient(to right, #d42c14, #8b0000); /* red theme */
+  padding: 6px 14px;
+  font-size: 14px;
+  margin-right: 6px;
+}
+
+.btn--red:hover {
+  background: linear-gradient(to right, #8b0000, #d42c14);
+  composes: btn btn--small;
+}
+.btn--logout {
+  background: linear-gradient(to right, #d42c14, #8b0000); /* red theme */
+}
+
+.btn--logout:hover {
+  background: linear-gradient(to right, #8b0000, #d42c14);
+}
+
+
+
+/* Controls container */
+.container {
+  max-width: 960px;
+  margin: auto;
+  padding: 30px 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 48px;
+  font-family: 'Cambria', serif;
+  font-weight: bold;
+  background: linear-gradient(to right, #7eb1eb, #c1b6e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 2px rgba(247, 242, 242, 0.4);
+  letter-spacing: 1.2px;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.controls input,
+.controls select {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-family: Cambria, serif;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.controls input:focus,
+.controls select:focus {
+  outline: none;
+  border-color: #4e9af1;
+  box-shadow: 0 0 6px rgba(78, 154, 241, 0.5);
+}
+
+.controls input:hover,
+.controls select:hover {
+  background-color: #f9f9f9;
+}
+
+/* Confirm modal */
+#confirmModal .modal-content {
+  text-align: center;
+  animation: fadeInScale 0.3s ease forwards;
+}
+
+#confirmModal button {
+  /* Use button modifier */
+  composes: btn btn--modal;
+}
+
+/* Inventory table */
+.inventory-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+}
+
+.inventory-table th,
+.inventory-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.inventory-table thead tr {
+  background-color: #003366;
+  color: #fff;
+}
+
+.inventory-table button {
+  /* Use small buttons */
+  composes: btn btn--small;
+}
+
+.low-stock {
+  color: black;
+  font-weight: bold;
+}
+
+/* Modal base styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* full screen */
+  background: rgba(0, 0, 0, 0.5);
+  display: flex; /* flexbox to center */
+  align-items: center; /* vertical center */
+  justify-content: center; /* horizontal center */
+  z-index: 1000;
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-content {
+  background: rgb(233, 232, 232);
+  padding: 50px;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 40px;
+  font-size: large;
+}
+
+.modal-content input {
+  width: 100%;
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.modal-button {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.modal-button button {
+  composes: btn btn--modal;
+}
+
+/* Item modal */
+#itemModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  width: 320px;
+  display: none;
+}
+
+.modal input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px 10px;
+  font-size: 16px;
+}
+
+.modal button {
+  composes: btn btn--modal;
+}
+
+#saveMessage {
+  position: relative;
+  z-index: 10;
+  font-weight: 600;
+  color: #0a7e07; /* green */
+  margin-top: 10px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .controls {
+    flex-direction: column;
+  }
+}
+
+/* History log */
+.history-log-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+  padding: 15px 30px;
+  z-index: 5;
+}
+
+.history-log-title {
+  margin: 0 0 8px;
+  font-weight: bold;
+  color: #333;
+  font-size: 16px;
+}
+
+.history-log {
+  max-height: 100px;
+  overflow-y: auto;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  font-size: 14px;
+}
+
+.history-log li {
+  padding: 4px 0;
+  border-bottom: 1px solid #eee;
+  color: #444;
+}
+
+/* Export dropdown */
+.export-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.export-dropdown button {
+  /* Apply base button style */
+  composes: btn;
+}
+
+.export-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.export-options div {
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+.export-options div:hover {
+  background: #f4f4f4;
+}

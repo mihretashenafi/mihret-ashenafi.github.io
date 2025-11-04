@@ -1,0 +1,201 @@
+/*This file define the colour, position, fonts, and margins 
+for the components in the header and footer of every page.*/
+body{
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 15px;
+	line-height: 1.0;
+	color: #fff4ec;
+	padding: 0;
+	margin: 0;
+	background-color: #18181d;
+}
+
+.headerContainer{
+	width:95%;
+margin: 30px;
+	overflow: hidden;
+}
+
+header{
+	background-color: #0a0a0c;
+	color: #fff4ec;
+	padding-top: 20px;
+	min-height: 55px;
+}
+
+header a{
+	color: #fff4ec;
+	text-decoration: none;
+	float: right;
+	display: inline;
+}
+header #brand{
+	float: left;
+}
+header #brand h1{
+	margin: 0;
+}
+header #brand h3{
+	margin: 0;
+	padding-bottom: 5px;
+}
+header #rightContainer{
+	float: right;
+	margin-top: 15px;
+}
+
+.current a{
+	color: #e96011;
+	font-weight: bold;
+}
+
+header a:hover{
+	color: #e96011;
+	font-weight: bold;
+}
+
+section #loginContainer{
+	min-height: auto;
+	align-items: center;
+	background-color: #272729;
+}
+/* img and pop-up a/button css is Just incase
+-------------------------------------------------*/
+
+/*img{
+	 height: 24px;
+    width: 30px;
+}
+
+*/
+.pop-up a {
+	margin-top: 30px;
+    margin-left: 500px;
+    margin: left:200px;
+    background-color: #e96011;
+    border: 0;
+    border-radius: 10px;
+    padding-left: 50px;
+    padding-right: 60px;
+	text-decoration:none;
+    color: #fff4ec;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.container{
+	width: 330px;
+    height: 171px;
+    padding: 10px;
+    /* position: relative; */
+    border: 5px solid #272729;
+    margin: auto;
+    background-color: #272729;
+    border-radius: 20px;
+    box-shadow: 10px 10px 5px black;
+    margin-top: 30px;
+}
+.container #loginForm{
+	vertical-align: middle;
+	margin: auto;
+}
+
+.container span #email{
+	padding-left: 45px;
+
+}
+
+.container span #password{
+	padding-left: 15px;
+}
+
+.container #formSpan{
+	width: inherit;
+	margin: auto;
+}
+
+#formSpan input{
+	border-radius: 10px;
+	width: 250px;
+}
+
+#loginContainer p{
+	border-bottom: #e96011 1px solid;
+}
+#signupContainer{
+	width: 75%;
+	margin: auto;
+}
+.showcase{
+
+	margin-top: 130px;
+}
+.showcase #blabla{
+	float: left;
+	width: 75%;
+	padding-right: 5%;
+}
+
+.showcase #signup{
+	float: right;
+	width: 15%;
+	padding-left: 5%;
+}
+
+.showcase #signup a{
+margin-top: 18px; 
+    height: 50px;
+    background-color: #e96011;
+    border: 0;
+    border-radius: 10px;
+    padding-left: 60px;
+    padding-right: 60px;
+    color: #fff4ec;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+footer {
+	background-color: #272729;
+	color: #fff4ec;
+	padding: 10px;
+	margin-top: 10px;
+	border-top: #e96011 1px solid;
+	position: absolute;
+	bottom: 0;
+	/*min-height: auto;*/
+	height: 30px;
+	right: 0;
+	left: 0;
+	font-size: 13px;
+}
+
+footer .footerContainer{
+	margin-top: 10px;
+}
+
+footer a{
+	color: #fff4ec;
+	text-decoration: none;
+}
+
+footer ul{
+	padding: 0;
+	margin: 0;
+}
+
+footer li{
+	float: left;
+	display: inline;
+	padding: 0 10px 0 10px;
+}
+
+footer #leftFooter{
+	float: left;
+	margin-top: -15px;
+}
+
+footer #rightFooter{
+	float: right;
+}

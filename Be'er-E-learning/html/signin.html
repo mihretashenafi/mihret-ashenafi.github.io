@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>user registration system using php and myssql</title>
+		<link rel="stylesheet"type="text/css"href="..\signup.css">
+	</head>
+<body>
+	 <div class="login-wrap">
+      <div class="login-html">
+       
+        <div class="login-form">
+          <form class="signup-form"action="login.php"method="POST">
+
+            <div class="group">
+              <label for="user" class="label">Username</label>
+              <input id="username" name="username" type="text" class="input">
+            </div>
+           
+           
+
+               <div class="group">
+              <label for="user" class="label">Password</label>
+              <input id="email"name="password_1"maxlength="8"type="password"required="required"class="input">
+            
+            
+           
+            </div>
+            <div class="group">
+              <button type="submit" class="button" name="login">login</button>
+            </div></br></br></br>
+
+          <p>I don't have an account? <a href="register.php" style="color:red;">         SIGN UP </a></p></br>
+                                       <p><a href="forget.php"style="color:red;">          forget passqord?</a></p>           
+          </form>
+         
+        </div>
+      </div>
+    </div>
+
+
+	</body>
+</html>

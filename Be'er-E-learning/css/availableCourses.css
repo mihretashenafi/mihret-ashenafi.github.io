@@ -1,0 +1,179 @@
+﻿/*This file define the colour, position, fonts, and margins 
+for the components in the header and footer of every page.*/
+body{
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 15px;
+	line-height: 1.0;
+	color: #fff4ec;
+	padding: 0;
+	margin: 0;
+	background-color: #18181d;
+}
+
+.headerContainer{
+	width:95%;
+	margin:auto;
+	overflow: hidden;
+}
+
+.menuBar{
+	width: 100%;
+	margin: auto;
+	overflow: hidden;
+	background-color: #272729;
+	color: #fff4ec;
+	min-height: 50px;	
+}
+
+.menuBar a{
+	color: #fff4ec;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.menuBar ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: block;
+	
+}
+
+.menuBar li{
+	float: left;
+	display: inline;
+	padding: 0 20px 0 20px;
+}
+
+.menuBar nav{
+	float: left;
+	margin-top: 17px;
+	
+
+	
+}
+
+.menuBar a:hover{
+	color: #e96011;
+	font-weight: bold;
+}
+
+
+
+
+
+header{
+	background-color: #0a0a0c;
+	color: #fff4ec;
+	padding-top: 20px;
+	min-height: 55px;
+}
+
+header a{
+	color: #fff4ec;
+	text-decoration: none;
+	float: right;
+	display: inline;
+}
+header #brand{
+	float: left;
+}
+header #brand h1{
+	margin: 0;
+}
+header #brand h3{
+	margin: 0;
+	padding-bottom: 5px;
+}
+header #rightContainer{
+	float: right;
+	margin-top: 15px;
+}
+
+.current a{
+	color: #e96011;
+	font-weight: bold;
+}
+
+header a:hover{
+	color: #e96011;
+	font-weight: bold;
+}
+
+fieldset {
+    background-color:#808080;
+    height:350px;
+  
+}
+
+
+ label {
+float:left;
+display:block;
+width:450px;
+margin-left:400px;
+
+}
+
+input {
+width:13px;
+height:13px;
+vertical-align:bottom;
+position:relative;
+}
+#enrol {
+    float: right;
+    background-color:#e96011;
+    width:100px;
+    height:25px;
+    margin-right:20px;
+    margin-left: 70%;
+    margin-bottom:20px;
+    color: white;
+    -webkit-border-radius: 25px;
+}
+
+footer {
+	background-color: #272729;
+	color: #fff4ec;
+	padding: 10px;
+	margin-top: 10px;
+	border-top: #e96011 1px solid;
+	position: absolute;
+	bottom: 0;
+	/*min-height: auto;*/
+	height: 30px;
+	right: 0;
+	left: 0;
+	font-size: 13px;
+}
+
+footer .footerContainer{
+	margin-top: 10px;
+}
+
+footer a{
+	color: #fff4ec;
+	text-decoration: none;
+}
+
+footer ul{
+	padding: 0;
+	margin: 0;
+}
+
+footer li{
+	float: left;
+	display: inline;
+	padding: 0 10px 0 10px;
+}
+
+footer #leftFooter{
+	float: left;
+	margin-top: -15px;
+}
+
+footer #rightFooter{
+	float: right;
+}
+

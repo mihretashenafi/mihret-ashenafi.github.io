@@ -1,0 +1,60 @@
+.sidebar {
+     /*clip-path:polygon(0 0,  0 100%,  100% 0, 100% 100% );*/
+    position: absolute;
+    top: 120px;
+    left:0px;
+    background:#0000007d;
+    color:white;
+    width: 250px;
+    height: 60%;
+    transition: .3s;
+}
+.sidebar.active{
+    left:-250px;
+}
+.sidebar ul{
+   
+    margin:0;
+    padding:20px 0;
+}
+.sidebar ul> li > a {
+   padding-left: 50px;
+    display: block;
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.sidebar ul> li > a:hover{
+  color: orangered;
+    z-index: 2;
+    font-size: 14px;
+}
+
+.SideBarBtn{
+    position: absolute;
+    top: 0px;
+    right: -50px;
+    width: 40px;
+    background-color: #00020adb;
+    height: 40px;
+    /* padding: 4px 8px; */
+    margin: 6px 0;
+    height: 30px;
+    box-sizing: border-box;
+    cursor: pointer;
+    border: none;
+    transition: .5s;
+    outline: none;
+}
+
+
+.SideBarBtn span {
+    display:block;
+    width: 25px;
+    height: 1.5px;
+    position:absolute;
+    top:24px;
+    background:#262626;
+    transition:.3s;
+}

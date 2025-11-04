@@ -1,0 +1,245 @@
+/*This file define the colour, position, fonts, and margins 
+for the components in the header and footer of every page.*/
+body{
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 15px;
+	line-height: 1.0;
+	color: #fff4ec;
+	padding: 0;
+	margin: 0;
+	background-color: #18181d;
+}
+
+.headerContainer{
+	width:95%;
+	margin:auto;
+	overflow: hidden;
+}
+
+.menuBar{
+	width: 100%;
+	margin: auto;
+	overflow: hidden;
+	background-color: #272729;
+	color: #fff4ec;
+	min-height: 50px;
+}
+
+.menuBar a{
+	color: #fff4ec;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.menuBar ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.menuBar li{
+	float: left;
+	display: inline;
+	padding: 0 40px 0 40px;
+}
+
+.menuBar nav{
+	float: left;
+	margin-top: 17px;
+	padding-left: 290px;
+}
+
+.menuBar a:hover{
+	color: #e96011;
+	font-weight: bold;
+}
+
+#userprofile h3,h5,h5{
+	margin-left:20px;
+}
+/*
+aside{
+	float: left;
+	background-color: #272730;
+	min-width: 250px;
+	position: fixed;
+	height: 100%;
+}
+
+aside ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+aside li{
+	text-align: center;
+	list-style: none;
+	padding: 15px 10px;
+	border-bottom: rgb(23, 30, 39) 1px solid;
+	border-right: rgb(23, 30, 39) 1px solid;
+	border-left: rgb(23, 30, 39) 1px solid;	
+}
+
+aside a{
+	text-decoration: none;
+	color: #fff4ec;
+}
+
+aside li:hover{
+	background-color: #7e7e87;
+	color: #12128e;
+}
+
+aside a:active{
+	font-weight: bold;
+}
+
+header{
+	background-color: #0a0a0c;
+	color: #fff4ec;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	min-height: 55px;
+}
+
+header a{
+	color: #fff4ec;
+	text-decoration: none;
+	float: right;
+	display: inline;
+}
+header #brand{
+	float: left;
+}
+header #brand h1{
+	margin: 0;
+}
+header #brand h3{
+	margin: 0;
+	padding-bottom: 5px;
+}
+header #rightContainer{
+	float: right;
+	margin-top: 8px;
+}
+
+header #rightContainer img{
+	width: 40px;
+	border-radius: 50%;
+}
+
+.current a{
+	color: #e96011;
+	font-weight: bold;
+}
+
+header a:hover{
+	color: #e96011;
+	font-weight: bold;
+}
+
+#leftSection{
+	float: left;
+	margin-top: 40px;
+	margin-left: 22%;
+}
+*/
+#leftSection .userContainer{
+	text-align: center;
+	padding: 10px;
+}
+
+#leftSection .userContainer img{
+	width: 150px;
+	height:auto;
+	border-radius: 50%;
+}
+#leftSection.userContainer> #userprofile{
+	margin-left:50px;
+}
+h3,h5{
+	margin-left:-190px;
+}
+
+#centerSection{
+	float: right;
+	margin-top: 70px;
+	margin-right: 48%;
+}
+
+#centerSection .progressContainer{
+	float: left;
+	text-align: left;	
+	padding: 10px;
+}
+
+#centerSection hr{
+	width: 140%;
+	border: #e96011 0.5px solid;
+}
+
+#rightSection{
+	float: right;
+	background-color: #18181d;
+	max-width: 500px;
+	position: fixed;
+	height: 100%;
+	right: -8%;
+
+}
+
+#rightSection .motivationContainer{
+	float: right;
+	padding: 15px;
+}
+
+#rightSection .motivationContainer img{
+	width: 65%;
+	padding: 7px 0 7px 0;
+}
+/*
+footer {
+	background-color: #272729;
+	color: #fff4ec;
+	padding: 10px;
+	margin-top: 10px;
+	border-top: #e96011 1px solid;
+	position: absolute;
+	bottom: 0;
+	min-height: auto;
+	height: 30px;
+	right: 0;
+	left: 0;
+	font-size: 13px;
+}
+
+footer .footerContainer{
+	margin-top: 10px;
+}
+
+footer a{
+	color: #fff4ec;
+	text-decoration: underline;
+}
+
+footer ul{
+	padding: 0;
+	margin: 0;
+}
+
+footer li{
+	float: left;
+	display: inline;
+	padding: 0 10px 0 10px;
+}
+
+footer #leftFooter{
+	float: left;
+	margin-top: -15px;
+}
+
+footer #rightFooter{
+	float: right;
+}
+*/

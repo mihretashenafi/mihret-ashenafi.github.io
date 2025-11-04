@@ -1,0 +1,262 @@
+/*This file define the colour, position, fonts, and margins 
+for the components in the header and footer of every page.*/
+body{
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 15px;
+	line-height: 1.0;
+	color: #fff4ec;
+	padding: 0; 
+	margin: 0;
+	background-color: #18181d;
+}
+
+.headerContainer{
+	width:95%;
+	margin:auto;
+	overflow: hidden;
+	position: relative;
+}
+#sidebar {
+	background-color: #272729;
+	color: #fff;
+	width: 25%;
+	height: 100%;
+	position:fixed;
+	margin : 0px;
+	padding: 0;
+	overflow: auto;
+	
+}
+#sidebar ul{
+	padding: 0;
+	list-style: none;
+}
+
+#sidebar li {
+	/*display: block;*/
+	color: white;
+	text-decoration: none;
+	padding: 8px 0px 8px 16px;
+	margin-top: 8%;
+	border: 1px solid #12128e;
+	text-align: center;
+}
+#sidebar  a{
+	color: #fff4ec;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+#sidebar li a:hover {
+	color: #12128e;
+	font-weight: bold;
+	background-color: #7e7e87;
+
+}
+#sidebar li a.active{
+	background-color: #7e7e87;
+	color: #12128e;
+}
+#sidebar li:hover{
+	background-color: #7e7e87;
+	color: #12128e;
+}
+#sidebar  a.active , #sidebar li.highlight {
+    color: #12128e;
+	font-weight: bold;
+	background-color: #7e7e87;
+}
+#sidenbar a:hover:not(.active)  {
+     color: #12128e;
+	font-weight: bold;
+	background-color: #7e7e87;
+}
+.container{
+	margin-top: 50px;
+	margin-right: 50px;
+	float: right;
+	width: 60%;
+	padding: 8px;
+	border: 1px red solid;
+}
+.sec{
+	
+}
+/*
+.menuBar{
+	width: 100%;
+	margin: auto;
+	overflow: hidden;
+	background-color: #272729;
+	color: #fff4ec;
+	min-height: 50px;	
+}
+.menubar{
+	float: left;
+	background-color: rgb(11, 17, 26);
+	min-width: 150px;
+	position: fixed;
+	height: 100%;
+}
+
+.menubar ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.menubar ul li{
+	list-style: none;
+	padding: 15px 10px;
+	border-bottom: rgb(23, 30, 39) 1px solid;
+	text-decoration: none;
+}
+
+/*
+.menuBar a{
+	color: #fff4ec;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.menuBar ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: block;
+	
+}
+
+.menuBar li{
+	float: left;
+	display: inline;
+	padding: 0 20px 0 20px;
+}
+
+.menuBar nav{
+	float: left;
+	margin-top: 17px;
+	
+	width: fit-content;
+	
+}
+
+.menuBar a:hover{
+	color: #e96011;
+	font-weight: bold;
+}
+*/
+header{
+	background-color: #0a0a0c;
+	color: #fff4ec;
+	padding-top: 20px;
+	min-height: 55px;
+}
+
+header a{
+	color: #fff4ec;
+	text-decoration: none;
+	float: right;
+	display: inline;
+}
+header #brand{
+	float: left;
+}
+header #brand h1{
+	margin: 0;
+}
+header #brand h3{
+	margin: 0;
+	padding-bottom: 5px;
+}
+header #rightContainer{
+	float: right;
+	margin-top: 15px;
+}
+
+.current a{
+	color: #e96011;
+	font-weight: bold;
+}
+
+header a:hover{
+	color: #e96011;
+	font-weight: bold;
+}
+
+footer {
+	background-color: #272729;
+	color: #fff4ec;
+	padding: 10px;
+	margin-top: 10px;
+	border-top: #e96011 1px solid;
+	position: fixed;
+	bottom: 0;
+	/*min-height: auto;*/
+	height: 30px;
+	right: 0;
+	left: 0;
+	font-size: 13px;
+}
+
+footer .footerContainer{
+	margin-top: 10px;
+}
+
+footer a{
+	color: #fff4ec;
+	text-decoration: none;
+}
+
+footer ul{
+	padding: 0;
+	margin: 0;
+}
+
+footer li{
+	float: left;
+	display: inline;
+	padding: 0 10px 0 10px;
+}
+footer li a{
+	color: #fff4ec;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+footer li a:hover{
+	color: #e96011;
+	font-weight: bold;
+}
+footer #leftFooter{
+	float: left;
+	margin-top: -15px;
+}
+
+footer #rightFooter{
+	float: right;
+}
+@media(max-width: 600px){
+	#sidebar, #sidebar li , #sidebar  a , header #brand , header #brand h1, header #brand h3 {
+		display: inline;
+		float: none;
+		text-align: center;
+		width: 100%;
+		height: 10%;
+		position: static;
+	}
+	#sidebar li {
+		display: list-item;
+	}
+	.sec{
+		margin-top: 30px;
+		margin-left: 90px;
+		margin-bottom: 50%;
+		width: 50%;
+		
+	}
+	footer li ,footer #leftFooter{
+		
+		float:none;
+		position: static;
+		width: 100%
+	}
+}	
